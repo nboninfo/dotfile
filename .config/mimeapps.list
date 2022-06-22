@@ -1,0 +1,6 @@
+[Added Associations]
+application/octet-stream=org.gnome.gedit.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;
+
+[Default Applications]
+application/x-shellscript=org.gnome.gedit.desktop
