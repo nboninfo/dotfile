@@ -2,24 +2,14 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-/usr/bin/numlockx on & 
-pkill picom
-picom --experimental-backends &
-${HOME}/.config/polybar/launch.sh &
-megasync &
-dropbox &
-nitrogen --restore &
-pkill dunst
-dunst &
-${HOME}/.config/OhMyZsh/update.sh
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
 bspc monitor -d I II III IV V
 
 bspc config border_width         1
+bspc config window_gap           3
 bspc config normal_border_color '#5DABEB'
 bspc config focused_border_color '#E3BE79'
-bspc config window_gap           3
+bspc config focus_follows_pointer true
+
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -30,3 +20,5 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+${HOME}/.config/bspwm/autostart.sh
