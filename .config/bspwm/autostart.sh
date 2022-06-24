@@ -7,5 +7,5 @@ megasync &
 dropbox &
 nitrogen --restore &
 dunst &
-${HOME}/.config/OhMyZsh/update.sh
+${HOME}/.config/OhMyZsh/update.sh &
 polkit-gnome-authentication-agent-1 &

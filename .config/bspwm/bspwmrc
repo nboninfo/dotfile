@@ -1,24 +1,51 @@
 #! /bin/sh
 
+#*****************************#
+# hotkey start                #
+# início de teclas de atalhos #
+#*****************************#
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+#********************************#
+# quantity of workspace          #
+# quantidade de área de trabalho #
+#********************************#
+
 bspc monitor -d I II III IV V
+
+#*********************************#
+# border/gap of window            #
+# borda/espaço em volta da janela #
+#*********************************#
 
 bspc config border_width         1
 bspc config window_gap           3
 bspc config normal_border_color '#5DABEB'
 bspc config focused_border_color '#E3BE79'
-bspc config focus_follows_pointer true
-
-
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+#bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+#*****************#
+# bspwm rules     #
+# regras do bspwm #
+#*****************#
+
+bspc rule -a clamtk state=floating follow=on
+bspc rule -a inkscape desktop='^4' follow=on focus=on
+bspc rule -a ncspot desktop='^5' follow=on focus=on
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+#*******************#
+# autostart         #
+# inicio automatico #
+#*******************#
 
 ${HOME}/.config/bspwm/autostart.sh
+
