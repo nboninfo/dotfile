@@ -8,7 +8,6 @@ my_hostname=$(cat /etc/hostname)
 # Options
 shutdown=" Shutdown"
 reboot=" Reboot"
-lock=" Lock"
 logout=" Logout"
 
 # Variable passed to rofi
@@ -21,9 +20,6 @@ case $chosen in
 	;;
     $reboot)
         systemctl reboot
-        ;;
-    $lock)
-    	betterlockscreen -l    
         ;;
     $logout)
         bspc quit
